@@ -1,0 +1,14 @@
+site_name: "Лабораторная работа 1 — Личные финансы API"
+site_description: "Отчёт по лабораторной работе 1: серверное приложение FastAPI для управления личными финансами"
+site_author: "Гусев Никита, K3339"
+
+theme:
+  name: material
+  language: ru
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+
+nav:
+  - Отчёт: index.md
