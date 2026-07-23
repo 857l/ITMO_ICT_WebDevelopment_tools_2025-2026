@@ -15,7 +15,6 @@
 - Планировать бюджет по категориям на период
 
 ## Ссылки на практики
-https://github.com/857l/ITMO_ICT_WebDevelopment_tools_2025-2026/tree/Lab1/students/K3339/Gusev_Nikita/practices/1.1
 - [Практика 1.1 — Базовое приложение на FastAPI](https://github.com/857l/ITMO_ICT_WebDevelopment_tools_2025-2026/tree/Lab1/students/K3339/Gusev_Nikita/practices/1.1)
 - [Практика 1.2 — SQLModel + PostgreSQL](https://github.com/857l/ITMO_ICT_WebDevelopment_tools_2025-2026/tree/Lab1/students/K3339/Gusev_Nikita/practices/1.2)
 - [Практика 1.3 — Alembic + .env + .gitignore](https://github.com/857l/ITMO_ICT_WebDevelopment_tools_2025-2026/tree/Lab1/students/K3339/Gusev_Nikita/practices/1.3)
