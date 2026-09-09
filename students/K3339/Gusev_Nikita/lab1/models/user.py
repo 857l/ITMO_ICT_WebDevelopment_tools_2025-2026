@@ -5,7 +5,6 @@ from sqlmodel import SQLModel, Field, Relationship
 
 
 class UserDefault(SQLModel):
-    """Публичные поля пользователя — без пароля."""
     email: str
     name: str
 
@@ -20,7 +19,6 @@ class User(UserDefault, table=True):
 
 
 class UserRegister(SQLModel):
-    """Схема для регистрации — принимает сырой пароль."""
     email: str
     name: str
     password: str
@@ -32,6 +30,5 @@ class UserLogin(SQLModel):
 
 
 class UserUpdate(SQLModel):
-    """Схема для обновления собственных данных пользователем."""
     name: Optional[str] = None
     password: Optional[str] = None

@@ -16,7 +16,6 @@ def hash_password(password: str) -> str:
     hashed = hashlib.pbkdf2_hmac(
         "sha256", password.encode(), bytes.fromhex(salt), 100_000
     ).hex()
-    # храним соль и хэш вместе через разделитель
     return f"{salt}${hashed}"
 
 
@@ -67,11 +66,11 @@ def decode_access_token(token: str) -> Optional[dict]:
     expected_signature_b64 = _b64url_encode(expected_signature)
 
     if not hmac.compare_digest(expected_signature_b64, signature_b64):
-        return None  # подпись не совпадает — токен подделан или неверный секрет
+        return None
 
     payload = json.loads(_b64url_decode(payload_b64))
 
     if payload.get("exp", 0) < time.time():
-        return None  # токен просрочен
+        return None
 
     return payload

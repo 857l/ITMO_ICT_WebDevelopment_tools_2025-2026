@@ -10,5 +10,4 @@ class TransactionTagLink(SQLModel, table=True):
     tag_id: Optional[int] = Field(
         default=None, foreign_key="tag.id", primary_key=True
     )
-    # доп. поле ассоциативной сущности
     note: Optional[str] = ""

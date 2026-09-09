@@ -6,7 +6,6 @@ from database.connection import get_session
 from core.security import decode_access_token
 from models import User
 
-# Простая схема — в Swagger "Authorize" будет одно поле для вставки токена
 bearer_scheme = HTTPBearer()
 
 

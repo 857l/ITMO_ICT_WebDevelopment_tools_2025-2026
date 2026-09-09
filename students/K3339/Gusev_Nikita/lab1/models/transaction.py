@@ -25,9 +25,6 @@ class Transaction(TransactionDefault, table=True):
         back_populates="transactions", link_model=TransactionTagLink
     )
 
-
-# ---------- Модели для вложенного отображения в ответах API ----------
-
 class TransactionWithCategory(TransactionDefault):
     category: Optional[CategoryDefault] = None
 
