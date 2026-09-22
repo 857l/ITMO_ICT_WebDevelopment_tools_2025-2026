@@ -1,0 +1,1670 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="Lab2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Лабораторные работы — Гусев Никита</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-fastapi" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="." title="Лабораторные работы — Гусев Никита" class="md-header__button md-logo" aria-label="Лабораторные работы — Гусев Никита" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Лабораторные работы — Гусев Никита
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Лабораторная 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Лабораторные работы — Гусев Никита" class="md-nav__button md-logo" aria-label="Лабораторные работы — Гусев Никита" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Лабораторные работы — Гусев Никита
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная 1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ссылки на практики
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модель данных
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Модель данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Связи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ассоциативная сущность
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модели (SQLModel)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Модели (SQLModel)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactiontaglink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TransactionTagLink (ассоциативная таблица)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budget
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подключение к БД
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Эндпоинты API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Эндпоинты API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auth (авторизация)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accounts (счета)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Categories (категории)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags (теги)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budgets (бюджеты)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transactions (транзакции)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Аутентификация
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Аутентификация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pbkdf2-hmac-sha256" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Хэширование пароля (PBKDF2-HMAC-SHA256)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jwt-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Генерация и проверка JWT (вручную, по спецификации JWT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency для защищённых эндпоинтов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alembic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Миграции (Alembic)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запуск
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ссылки на практики
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модель данных
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Модель данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Связи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ассоциативная сущность
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модели (SQLModel)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Модели (SQLModel)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactiontaglink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TransactionTagLink (ассоциативная таблица)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budget
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подключение к БД
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Эндпоинты API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Эндпоинты API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auth (авторизация)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accounts (счета)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Categories (категории)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags (теги)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budgets (бюджеты)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transactions (транзакции)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Аутентификация
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Аутентификация">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pbkdf2-hmac-sha256" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Хэширование пароля (PBKDF2-HMAC-SHA256)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jwt-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Генерация и проверка JWT (вручную, по спецификации JWT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency для защищённых эндпоинтов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alembic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Миграции (Alembic)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запуск
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-fastapi">Лабораторная работа 1. Сервис для управления личными финансами на FastAPI</h1>
+<p><strong>Студент:</strong> Гусев Никита
+<strong>Группа:</strong> K3339
+<strong>Тема:</strong> Разработка сервиса для управления личными финансами</p>
+<h2 id="_1">Описание</h2>
+<p>Реализовано серверное приложение на FastAPI для учёта личных доходов и расходов. Приложение позволяет:</p>
+<ul>
+<li>Регистрироваться и авторизовываться по JWT</li>
+<li>Заводить несколько счетов (наличные, карты и т.д.)</li>
+<li>Категоризировать транзакции (доход/расход)</li>
+<li>Помечать транзакции тегами</li>
+<li>Планировать бюджет по категориям на период</li>
+</ul>
+<h2 id="_2">Ссылки на практики</h2>
+<ul>
+<li><a href="https://github.com/857l/ITMO_ICT_WebDevelopment_tools_2025-2026/students/K3339/Gusev_Nikita/practices/1.1">Практика 1.1 — Базовое приложение на FastAPI</a></li>
+<li><a href="https://github.com/857l/ITMO_ICT_WebDevelopment_tools_2025-2026/students/K3339/Gusev_Nikita/practices/1.2">Практика 1.2 — SQLModel + PostgreSQL</a></li>
+<li><a href="https://github.com/857l/ITMO_ICT_WebDevelopment_tools_2025-2026/students/K3339/Gusev_Nikita/practices/1.3">Практика 1.3 — Alembic + .env + .gitignore</a></li>
+<li><a href="https://github.com/857l/ITMO_ICT_WebDevelopment_tools_2025-2026/students/K3339/Gusev_Nikita/lab1">Финальный код лабораторной (lab1)</a></li>
+</ul>
+<hr />
+<h2 id="_3">Модель данных</h2>
+<p>Реализовано <strong>7 таблиц</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Таблица</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>User</code></td>
+<td>Пользователи системы</td>
+</tr>
+<tr>
+<td><code>Account</code></td>
+<td>Счета пользователя (наличные, карты и т.д.)</td>
+</tr>
+<tr>
+<td><code>Category</code></td>
+<td>Категории доходов/расходов</td>
+</tr>
+<tr>
+<td><code>Transaction</code></td>
+<td>Транзакции (доходы/расходы)</td>
+</tr>
+<tr>
+<td><code>Budget</code></td>
+<td>Плановый бюджет по категории на период</td>
+</tr>
+<tr>
+<td><code>Tag</code></td>
+<td>Метки для транзакций</td>
+</tr>
+<tr>
+<td><code>TransactionTagLink</code></td>
+<td>Связь many-to-many между Transaction и Tag (с доп. полем <code>note</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">Связи</h3>
+<ul>
+<li><strong>One-to-many:</strong> User → Account (у пользователя несколько счетов)</li>
+<li><strong>One-to-many:</strong> User → Budget (у пользователя несколько бюджетов)</li>
+<li><strong>One-to-many:</strong> Account → Transaction (у счёта много транзакций)</li>
+<li><strong>One-to-many:</strong> Category → Transaction (у категории много транзакций)</li>
+<li><strong>One-to-many:</strong> Category → Budget (у категории может быть бюджет)</li>
+<li><strong>Many-to-many:</strong> Transaction ↔ Tag (через <code>TransactionTagLink</code>)</li>
+</ul>
+<h3 id="_5">Ассоциативная сущность</h3>
+<p><code>TransactionTagLink</code> содержит дополнительное поле <code>note</code> — комментарий к тому, почему тег присвоен именно этой транзакции.</p>
+<hr />
+<h2 id="sqlmodel">Модели (SQLModel)</h2>
+<h3 id="user">User</h3>
+<pre><code class="language-python">class UserDefault(SQLModel):
+    email: str
+    name: str
+
+
+class User(UserDefault, table=True):
+    id: int = Field(default=None, primary_key=True)
+    hashed_password: str
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+
+    accounts: List[&quot;Account&quot;] = Relationship(back_populates=&quot;user&quot;)
+    budgets: List[&quot;Budget&quot;] = Relationship(back_populates=&quot;user&quot;)
+</code></pre>
+<h3 id="account">Account</h3>
+<pre><code class="language-python">class AccountDefault(SQLModel):
+    name: str
+    balance: float = 0.0
+    currency: str = &quot;RUB&quot;
+    user_id: Optional[int] = Field(default=None, foreign_key=&quot;user.id&quot;)
+
+
+class Account(AccountDefault, table=True):
+    id: int = Field(default=None, primary_key=True)
+    user: Optional[&quot;User&quot;] = Relationship(back_populates=&quot;accounts&quot;)
+    transactions: List[&quot;Transaction&quot;] = Relationship(back_populates=&quot;account&quot;)
+</code></pre>
+<h3 id="category">Category</h3>
+<pre><code class="language-python">class CategoryType(Enum):
+    income = &quot;income&quot;
+    expense = &quot;expense&quot;
+
+
+class CategoryDefault(SQLModel):
+    title: str
+    type: CategoryType
+
+
+class Category(CategoryDefault, table=True):
+    id: int = Field(default=None, primary_key=True)
+    transactions: List[&quot;Transaction&quot;] = Relationship(back_populates=&quot;category&quot;)
+    budgets: List[&quot;Budget&quot;] = Relationship(back_populates=&quot;category&quot;)
+</code></pre>
+<h3 id="tag">Tag</h3>
+<pre><code class="language-python">class TagDefault(SQLModel):
+    name: str
+
+
+class Tag(TagDefault, table=True):
+    id: int = Field(default=None, primary_key=True)
+    transactions: List[&quot;Transaction&quot;] = Relationship(
+        back_populates=&quot;tags&quot;, link_model=TransactionTagLink
+    )
+</code></pre>
+<h3 id="transactiontaglink">TransactionTagLink (ассоциативная таблица)</h3>
+<pre><code class="language-python">class TransactionTagLink(SQLModel, table=True):
+    transaction_id: Optional[int] = Field(
+        default=None, foreign_key=&quot;transaction.id&quot;, primary_key=True
+    )
+    tag_id: Optional[int] = Field(
+        default=None, foreign_key=&quot;tag.id&quot;, primary_key=True
+    )
+    note: Optional[str] = &quot;&quot;
+</code></pre>
+<h3 id="transaction">Transaction</h3>
+<pre><code class="language-python">class TransactionDefault(SQLModel):
+    amount: float
+    description: str
+    date: date_type = Field(default_factory=lambda: datetime.utcnow().date())
+    account_id: Optional[int] = Field(default=None, foreign_key=&quot;account.id&quot;)
+    category_id: Optional[int] = Field(default=None, foreign_key=&quot;category.id&quot;)
+
+
+class Transaction(TransactionDefault, table=True):
+    id: int = Field(default=None, primary_key=True)
+    account: Optional[&quot;Account&quot;] = Relationship(back_populates=&quot;transactions&quot;)
+    category: Optional[&quot;Category&quot;] = Relationship(back_populates=&quot;transactions&quot;)
+    tags: List[&quot;Tag&quot;] = Relationship(
+        back_populates=&quot;transactions&quot;, link_model=TransactionTagLink
+    )
+
+
+# Модели для вложенного отображения в ответах API
+class TransactionWithCategory(TransactionDefault):
+    category: Optional[CategoryDefault] = None
+
+
+class TransactionWithTags(TransactionDefault):
+    tags: List[TagDefault] = []
+</code></pre>
+<h3 id="budget">Budget</h3>
+<pre><code class="language-python">class BudgetDefault(SQLModel):
+    limit_amount: float
+    period_start: date_type
+    period_end: date_type
+    user_id: Optional[int] = Field(default=None, foreign_key=&quot;user.id&quot;)
+    category_id: Optional[int] = Field(default=None, foreign_key=&quot;category.id&quot;)
+
+
+class Budget(BudgetDefault, table=True):
+    id: int = Field(default=None, primary_key=True)
+    user: Optional[&quot;User&quot;] = Relationship(back_populates=&quot;budgets&quot;)
+    category: Optional[&quot;Category&quot;] = Relationship(back_populates=&quot;budgets&quot;)
+</code></pre>
+<hr />
+<h2 id="_6">Подключение к БД</h2>
+<p><code>database/connection.py</code>:</p>
+<pre><code class="language-python">from sqlmodel import SQLModel, Session, create_engine
+from core.config import DB_URL
+
+engine = create_engine(DB_URL, echo=True)
+
+
+def init_db():
+    import models  # noqa
+    SQLModel.metadata.create_all(engine)
+
+
+def get_session():
+    with Session(engine) as session:
+        yield session
+</code></pre>
+<p>Переменные окружения (<code>.env</code>, не попадает в git благодаря <code>.gitignore</code>):</p>
+<pre><code>DB_ADMIN=postgresql://postgres:ПАРОЛЬ@localhost/lab1_finance_db
+JWT_SECRET=super_secret_key_change_me_12345
+</code></pre>
+<hr />
+<h2 id="api">Эндпоинты API</h2>
+<h3 id="auth">Auth (авторизация)</h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Путь</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/auth/register</code></td>
+<td>Регистрация нового пользователя</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/auth/login</code></td>
+<td>Авторизация (получение JWT-токена)</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/auth/me</code></td>
+<td>Информация о текущем пользователе (по токену)</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/auth/me</code></td>
+<td>Обновление своего имени/пароля</td>
+</tr>
+</tbody>
+</table>
+<h3 id="users">Users</h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Путь</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/user/list</code></td>
+<td>Список пользователей</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/user/{user_id}</code></td>
+<td>Пользователь по id</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/user</code></td>
+<td>Создание пользователя (служебный CRUD)</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/user/delete{user_id}</code></td>
+<td>Удаление пользователя</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accounts">Accounts (счета)</h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Путь</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/account/list</code></td>
+<td>Список счетов</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/account/{account_id}</code></td>
+<td>Счёт по id</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/account</code></td>
+<td>Создание счёта</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/account/delete{account_id}</code></td>
+<td>Удаление счёта</td>
+</tr>
+</tbody>
+</table>
+<h3 id="categories">Categories (категории)</h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Путь</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/category/list</code></td>
+<td>Список категорий</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/category/{category_id}</code></td>
+<td>Категория по id</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/category</code></td>
+<td>Создание категории</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/category/delete{category_id}</code></td>
+<td>Удаление категории</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tags">Tags (теги)</h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Путь</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/tag/list</code></td>
+<td>Список тегов</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/tag</code></td>
+<td>Создание тега</td>
+</tr>
+</tbody>
+</table>
+<h3 id="budgets">Budgets (бюджеты)</h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Путь</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/budget/list</code></td>
+<td>Список бюджетов</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/budget/{budget_id}</code></td>
+<td>Бюджет по id</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/budget</code></td>
+<td>Создание бюджета</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/budget/delete{budget_id}</code></td>
+<td>Удаление бюджета</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transactions">Transactions (транзакции)</h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Путь</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/transaction/list</code></td>
+<td>Список транзакций</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/transaction/{transaction_id}</code></td>
+<td>Транзакция с вложенной категорией</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/transaction/{transaction_id}/with_tags</code></td>
+<td>Транзакция с вложенным списком тегов</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/transaction</code></td>
+<td>Создание транзакции</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/transaction/{transaction_id}</code></td>
+<td>Обновление транзакции</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/transaction/delete{transaction_id}</code></td>
+<td>Удаление транзакции</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/transaction/{transaction_id}/tag/{tag_id}</code></td>
+<td>Привязка тега к транзакции (many-to-many, с доп. полем <code>note</code>)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">Аутентификация</h2>
+<p>JWT-аутентификация и хэширование паролей реализованы <strong>полностью вручную</strong>, без сторонних библиотек-обёрток (<code>passlib</code>, <code>python-jose</code>, <code>pyjwt</code> не используются) — только базовые модули стандартной библиотеки Python: <code>hashlib</code>, <code>hmac</code>, <code>secrets</code>, <code>base64</code>, <code>json</code>.</p>
+<h3 id="pbkdf2-hmac-sha256">Хэширование пароля (PBKDF2-HMAC-SHA256)</h3>
+<pre><code class="language-python">def hash_password(password: str) -&gt; str:
+    salt = secrets.token_hex(16)
+    hashed = hashlib.pbkdf2_hmac(
+        &quot;sha256&quot;, password.encode(), bytes.fromhex(salt), 100_000
+    ).hex()
+    return f&quot;{salt}${hashed}&quot;
+
+
+def verify_password(password: str, stored: str) -&gt; bool:
+    salt, hashed = stored.split(&quot;$&quot;)
+    check = hashlib.pbkdf2_hmac(
+        &quot;sha256&quot;, password.encode(), bytes.fromhex(salt), 100_000
+    ).hex()
+    return hmac.compare_digest(check, hashed)
+</code></pre>
+<h3 id="jwt-jwt">Генерация и проверка JWT (вручную, по спецификации JWT)</h3>
+<pre><code class="language-python">def create_access_token(user_id: int) -&gt; str:
+    header = {&quot;alg&quot;: JWT_ALGORITHM, &quot;typ&quot;: &quot;JWT&quot;}
+    payload = {
+        &quot;sub&quot;: str(user_id),
+        &quot;exp&quot;: int(time.time()) + JWT_EXPIRE_MINUTES * 60,
+        &quot;iat&quot;: int(time.time()),
+    }
+    header_b64 = _b64url_encode(json.dumps(header).encode())
+    payload_b64 = _b64url_encode(json.dumps(payload).encode())
+    signing_input = f&quot;{header_b64}.{payload_b64}&quot;.encode()
+    signature = hmac.new(JWT_SECRET.encode(), signing_input, hashlib.sha256).digest()
+    signature_b64 = _b64url_encode(signature)
+    return f&quot;{header_b64}.{payload_b64}.{signature_b64}&quot;
+
+
+def decode_access_token(token: str) -&gt; Optional[dict]:
+    header_b64, payload_b64, signature_b64 = token.split(&quot;.&quot;)
+    signing_input = f&quot;{header_b64}.{payload_b64}&quot;.encode()
+    expected_signature_b64 = _b64url_encode(
+        hmac.new(JWT_SECRET.encode(), signing_input, hashlib.sha256).digest()
+    )
+    if not hmac.compare_digest(expected_signature_b64, signature_b64):
+        return None  # подпись не совпадает
+    payload = json.loads(_b64url_decode(payload_b64))
+    if payload.get(&quot;exp&quot;, 0) &lt; time.time():
+        return None  # токен просрочен
+    return payload
+</code></pre>
+<h3 id="dependency">Dependency для защищённых эндпоинтов</h3>
+<pre><code class="language-python">bearer_scheme = HTTPBearer()
+
+
+def get_current_user(
+    credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme),
+    session: Session = Depends(get_session),
+) -&gt; User:
+    token = credentials.credentials
+    payload = decode_access_token(token)
+    if payload is None:
+        raise HTTPException(status_code=401, detail=&quot;Could not validate credentials&quot;)
+    user = session.get(User, int(payload.get(&quot;sub&quot;)))
+    if user is None:
+        raise HTTPException(status_code=401, detail=&quot;Could not validate credentials&quot;)
+    return user
+</code></pre>
+<hr />
+<h2 id="alembic">Миграции (Alembic)</h2>
+<p>Alembic настроен с автогенерацией миграций. URL базы данных передаётся из <code>.env</code> через <code>core/config.py</code>:</p>
+<pre><code class="language-python"># migrations/env.py
+from core.config import DB_URL
+from models import *  # noqa
+
+config.set_main_option(&quot;sqlalchemy.url&quot;, DB_URL)
+target_metadata = SQLModel.metadata
+</code></pre>
+<p>Команды:</p>
+<pre><code class="language-bash"># Создание миграции
+alembic revision --autogenerate -m &quot;init&quot;
+
+# Применение миграций
+alembic upgrade head
+</code></pre>
+<p>За время разработки были применены миграции:
+1. <code>init</code> — создание всех 7 таблиц
+2. <code>add password to user</code> — добавление поля <code>hashed_password</code> для JWT-авторизации</p>
+<hr />
+<h2 id="_8">Структура проекта</h2>
+<pre><code>lab1/
+├── .env                     # Переменные окружения (не в git)
+├── .gitignore
+├── alembic.ini              # Конфигурация Alembic
+├── requirements.txt
+├── main.py                  # Сборка FastAPI-приложения и роутеров
+├── migrations/
+│   ├── env.py
+│   ├── script.py.mako
+│   └── versions/
+├── core/
+│   ├── config.py            # Настройки из .env
+│   ├── security.py          # Хэширование паролей, JWT (вручную)
+│   └── dependencies.py      # get_current_user
+├── database/
+│   └── connection.py        # Подключение к БД, get_session
+├── models/
+│   ├── __init__.py          # Сборка метадаты для Alembic
+│   ├── user.py
+│   ├── account.py
+│   ├── category.py
+│   ├── tag.py
+│   ├── budget.py
+│   ├── transaction.py
+│   └── links.py             # TransactionTagLink (ассоциативная)
+└── routers/
+    ├── auth.py               # /auth/register, /auth/login, /auth/me
+    ├── user.py
+    ├── account.py
+    ├── category.py
+    ├── tag.py
+    ├── budget.py
+    └── transaction.py
+</code></pre>
+<hr />
+<h2 id="_9">Запуск</h2>
+<pre><code class="language-bash"># 1. Создать БД в PostgreSQL (например, через pgAdmin)
+#    CREATE DATABASE lab1_finance_db;
+
+# 2. Установить зависимости
+pip install -r requirements.txt
+
+# 3. Применить миграции
+alembic upgrade head
+
+# 4. Запустить сервер
+uvicorn main:app --reload
+</code></pre>
+<p>Документация API доступна по адресу: <code>http://127.0.0.1:8000/docs</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
